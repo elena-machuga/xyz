@@ -1,0 +1,12 @@
+/ChangeLanguageCommandImpl.class
+/DefaultCommandImpl.class
+/GoToAdminWelcomePageCommandImpl.class
+/GoToErrorPageCommandImpl.class
+/GoToGuestWelcomePageCommandImpl.class
+/GoToLoginationPageCommandImpl.class
+/GoToRegisteredPageCommandImpl.class
+/GoToRegistrationPageCommandImpl.class
+/GoToUserWelcomePageCommandImpl.class
+/LoginCommandImpl.class
+/LogoutCommandImpl.class
+/RegisterCommandImpl.class
