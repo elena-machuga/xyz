@@ -10,8 +10,11 @@ public class GoToAdminWelcomePageCommandImpl implements BaseCommand {
 
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response) {
-		// TODO Auto-generated method stub
-		return PagePath.PAGE_ADMIN_MAIN;
+		if (request.getSession(false) == null) {
+			return PagePath.PAGE_INDEX;
+		} else {
+			return PagePath.PAGE_ADMIN_MAIN;
+		}
 	}
 
 }

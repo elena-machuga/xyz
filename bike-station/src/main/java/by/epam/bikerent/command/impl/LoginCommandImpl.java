@@ -26,7 +26,7 @@ public class LoginCommandImpl implements BaseCommand {
 		String userPassword = request.getParameter(REQUEST_LOGIN_PASSWORD);
 
 		User user = service.authorizeUser(userName, userPassword);
-		HttpSession session = request.getSession();
+		HttpSession session = request.getSession(true);
 		session.setAttribute("user", user);
 
 		if (user == null) {
@@ -38,7 +38,6 @@ public class LoginCommandImpl implements BaseCommand {
 		} else {
 			return "bikes?action=go_to_guest_welcome_page";
 		}
-
 	}
 
 }

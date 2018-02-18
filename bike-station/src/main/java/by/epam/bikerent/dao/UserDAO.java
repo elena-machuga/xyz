@@ -1,7 +1,5 @@
 package by.epam.bikerent.dao;
 
-import static by.epam.bikerent.util.BooleanConverter.*;
-
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;

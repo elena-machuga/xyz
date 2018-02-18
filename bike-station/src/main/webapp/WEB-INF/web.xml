@@ -25,4 +25,10 @@
 	<session-config>
 		<session-timeout>30</session-timeout>
 	</session-config>
+	<listener>
+		<listener-class>by.epam.bikerent.listener.SessionListener</listener-class>
+	</listener>
+	<!-- <filter> <filter-name>ServletSecurityFilter</filter-name> <filter-class>by.epam.bikerent.filter.ServletSecurityFilter</filter-class> 
+		</filter> <filter-mapping> <filter-name>ServletSecurityFilter</filter-name> 
+		<url-pattern>/bikes</url-pattern> </filter-mapping> -->
 </web-app>
