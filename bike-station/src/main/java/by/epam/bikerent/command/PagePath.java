@@ -12,4 +12,5 @@ public class PagePath {
 	public static final String PAGE_REGISTERED = "/WEB-INF/pages/user/registered.jsp";
 	public static final String PAGE_LOGIN = "/WEB-INF/pages/loginpage.jsp";
 	public static final String PAGE_REGISTARTION = "/WEB-INF/pages/registrationpage.jsp";
+	public static final String PAGE_GUEST = "/WEB-INF/pages/guestpage.jsp";
 }

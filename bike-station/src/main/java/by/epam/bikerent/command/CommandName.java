@@ -4,28 +4,17 @@ import by.epam.bikerent.command.impl.ChangeLanguageCommandImpl;
 import by.epam.bikerent.command.impl.GoToAdminWelcomePageCommandImpl;
 import by.epam.bikerent.command.impl.GoToErrorPageCommandImpl;
 import by.epam.bikerent.command.impl.GoToGuestWelcomePageCommandImpl;
-import by.epam.bikerent.command.impl.GoToLoginationPageCommandImpl;
 import by.epam.bikerent.command.impl.GoToRegisteredPageCommandImpl;
-import by.epam.bikerent.command.impl.GoToRegistrationPageCommandImpl;
 import by.epam.bikerent.command.impl.GoToUserWelcomePageCommandImpl;
 import by.epam.bikerent.command.impl.LoginCommandImpl;
 import by.epam.bikerent.command.impl.LogoutCommandImpl;
 import by.epam.bikerent.command.impl.RegisterCommandImpl;
 
 public enum CommandName {
-	GO_TO_LOGINATION_PAGE{
-		{
-			this.command = new GoToLoginationPageCommandImpl();
-		}
-	},
+
 	LOGIN {
 		{
 			this.command = new LoginCommandImpl();
-		}
-	},
-	GO_TO_REGISTRATION_PAGE{
-		{
-			this.command = new GoToRegistrationPageCommandImpl();
 		}
 	},
 	REGISTER {

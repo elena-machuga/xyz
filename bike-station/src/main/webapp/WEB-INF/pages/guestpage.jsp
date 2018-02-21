@@ -14,6 +14,7 @@
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="${pageContext.request.contextPath}/JS/inputValidation.js"></script>
 <fmt:setLocale value="${sessionScope.locale}" />
 <fmt:setBundle basename="language.lang" var="lang" />
 <fmt:message bundle="${lang}" key="page.title" var="title" />
@@ -72,12 +73,13 @@
 						</div>
 						<div class="form-group">
 							<label for="pwd">${password}</label> <input type="password"
-								class="form-control" name="new_user_password">
+								class="form-control" name="new_user_password" id="pass">
 						</div>
 						<div class="form-group">
 							<label for="pwd">${repassword}</label> <input type="password"
-								class="form-control" name="new_user_repassword">
+								class="form-control" name="new_user_repassword" id="repPass">
 						</div>
+						<div id="errorBlock"></div>
 						<div class="form-group">
 							<label for="name">${name}</label> <input type="text"
 								class="form-control" name="new_user_name">

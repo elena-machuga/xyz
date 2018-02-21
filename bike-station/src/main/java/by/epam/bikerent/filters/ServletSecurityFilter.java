@@ -1,4 +1,4 @@
-package by.epam.bikerent.filter;
+package by.epam.bikerent.filters;
 
 import java.io.IOException;
 
@@ -14,9 +14,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import by.epam.bikerent.command.PagePath;
 import by.epam.bikerent.domain.Role;
 
-@WebFilter(urlPatterns = {"/bikes"}, servletNames = {"BikeStart"})
+//@WebFilter(urlPatterns = {"/bikes"}, servletNames = {"BikeStart"})
 public class ServletSecurityFilter implements Filter {
 
 	@Override
@@ -33,7 +34,7 @@ public class ServletSecurityFilter implements Filter {
 		if (type == null) {
 			type = Role.GUEST;
 			session.setAttribute("role", type);
-			RequestDispatcher dispatcher = ((FilterConfig) request).getServletContext().getRequestDispatcher("/pages/guestpage.jsp");
+			RequestDispatcher dispatcher = request.getRequestDispatcher(PagePath.PAGE_GUEST);
 			dispatcher.forward(req, resp);
 			return;
 		}

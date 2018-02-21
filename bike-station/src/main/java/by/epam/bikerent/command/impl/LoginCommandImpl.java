@@ -7,6 +7,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import by.epam.bikerent.command.BaseCommand;
 import by.epam.bikerent.domain.Role;
 import by.epam.bikerent.domain.User;
@@ -16,6 +19,8 @@ import by.epam.bikerent.service.util.ValidatorException;
 import by.epam.bikerent.service.util.ValidatorException.*;
 
 public class LoginCommandImpl implements BaseCommand {
+	
+	private static final Logger LOG = LogManager.getLogger(LoginCommandImpl.class.getName());
 
 	private LoginService service = new LoginServiceImpl(); // add IoC
 
@@ -30,7 +35,8 @@ public class LoginCommandImpl implements BaseCommand {
 		session.setAttribute("user", user);
 
 		if (user == null) {
-			return "bikes?action=go_to_error_page";
+			LOG.error("User not found: " + userName);
+			return "bikes?action=go_to_guest_welcome_page";
 		} else if (Role.ADMIN.equals(user.getRole())) {
 			return "bikes?action=go_to_admin_welcome_page";
 		} else if (Role.USER.equals(user.getRole())) {
