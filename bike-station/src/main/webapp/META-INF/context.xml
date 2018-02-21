@@ -4,12 +4,13 @@
 		name="jdbc/bike-station" 
 		auth="Container" 
 		type="javax.sql.DataSource"
-		maxActive="10" 
+		maxTotal="8" 
 		maxIdle="3" 
-		maxWait="10000" 
+		maxWaitMillis="10000" 
 		username="root" 
 		password="5501400" 
 		driverClassName="com.mysql.jdbc.Driver"
 		url="jdbc:mysql://localhost:3306/bike-station"
+		useSSL="false"
 	/>
 </Context>
