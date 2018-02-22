@@ -164,28 +164,6 @@
 			class="sr-only">Next</span>
 		</a>
 	</div>
-	<nav class="navbar navbar-fixed-bottom navbar-inverse">
-		<div class="container-fluid">
-			<p class="text-muted" align="right">© 2018 Pedaly.by</p>
-			<form action="bikes" method="post"
-				style="float: right; margin-right: 5px;">
-				<input type="hidden" name="action" value="change_language" /> <input
-					type="hidden" name="lang" value="en" /> <input type="image"
-					src="IMG/flag_en.gif">
-			</form>
-			<form action="bikes" method="post"
-				style="float: right; margin-right: 5px;">
-				<input type="hidden" name="action" value="change_language" /> <input
-					type="hidden" name="lang" value="ru" /> <input type="image"
-					src="IMG/flag_ru.png">
-			</form>
-			<form action="bikes" method="post"
-				style="float: right; margin-right: 5px;">
-				<input type="hidden" name="action" value="change_language" /> <input
-					type="hidden" name="lang" value="be" /> <input type="image"
-					src="IMG/flag_by.png">
-			</form>
-		</div>
-	</nav>
+<%@ include file="../pages/segment/footer.jsp"%>
 </body>
 </html>

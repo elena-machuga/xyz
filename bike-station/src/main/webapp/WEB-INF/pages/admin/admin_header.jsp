@@ -17,6 +17,10 @@
 <fmt:setLocale value="${sessionScope.locale}" />
 <fmt:message bundle="${lang}" key="link.logout" var="logout" />
 <fmt:message bundle="${lang}" key="page.title" var="title" />
+<fmt:message bundle="${lang}" key="menu.home" var="home" />
+<fmt:message bundle="${lang}" key="menu.rentpoints" var="rentpoints" />
+<fmt:message bundle="${lang}" key="menu.users" var="users" />
+<fmt:message bundle="${lang}" key="menu.bikes" var="bikes" />
 <title></title>
 </head>
 <body>
@@ -33,16 +37,17 @@
 			</div>
 			<div class="collapse navbar-collapse" id="adminNavbar">
 				<ul class="nav navbar-nav">
-					<li class="active"><a href="#">Home</a></li>
-					<li class="dropdown"><a class="dropdown-toggle"
-						data-toggle="dropdown" href="#">Page 1 <span class="caret"></span></a>
+					<li class="active"><a href="#">${home}</a></li>
+<%-- 					<li class="dropdown"><a class="dropdown-toggle"
+						data-toggle="dropdown" href="#">${rentpoints} <span class="caret"></span></a>
 						<ul class="dropdown-menu" role="menu">
 							<li><a href="#">Page 1-1</a></li>
 							<li><a href="#">Page 1-2</a></li>
 							<li><a href="#">Page 1-3</a></li>
-						</ul></li>
-					<li><a href="#">Page 2</a></li>
-					<li><a href="#">Page 3</a></li>
+						</ul></li> --%>
+					<li><a href="#">${rentpoints}</a></li>
+					<li><a href="#">${bikes}</a></li>
+					<li><a href="#">${users}</a></li>
 				</ul>
 				<ul class="nav navbar-nav navbar-right">
 					<li><a href="#"><span class="glyphicon glyphicon-user"></span> ${user.name}</a></li>
