@@ -42,8 +42,7 @@ public class UserDAO {
 			if (rs.next()) {
 				user.setName(rs.getString(USER_NAME));
 				user.setLogin(rs.getString(USER_LOGIN));
-				String r = rs.getString(USER_ROLE);
-				user.setRole(r);
+				user.setRole(rs.getString(USER_ROLE));
 				user.setAddres(USER_ADDRESS);
 				user.setPhone(USER_PHONE);
 			} else {
@@ -72,7 +71,7 @@ public class UserDAO {
 			ps.setString(5, pass);
 			ps.setString(6, ROLE_USER);
 
-			int rs = ps.executeUpdate();
+			ps.executeUpdate();
 
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -97,7 +96,7 @@ public class UserDAO {
 			ps.setString(6, ROLE_USER);
 			ps.setInt(7, user.getUserID());
 
-			ResultSet rs = ps.executeQuery();
+			ps.executeQuery();
 
 		} catch (SQLException e) {
 			e.printStackTrace();

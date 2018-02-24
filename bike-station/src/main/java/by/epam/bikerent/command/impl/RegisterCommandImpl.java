@@ -1,21 +1,14 @@
 package by.epam.bikerent.command.impl;
 
 import static by.epam.bikerent.service.util.RequestParameter.*;
-import static by.epam.bikerent.service.util.RequestParameterValidator.validateUserName;
-import static by.epam.bikerent.service.util.RequestParameterValidator.validateUserPassword;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 import by.epam.bikerent.command.BaseCommand;
 import by.epam.bikerent.command.PagePath;
-import by.epam.bikerent.domain.User;
-import by.epam.bikerent.service.LoginService;
 import by.epam.bikerent.service.RegisterUserService;
-import by.epam.bikerent.service.impl.LoginServiceImpl;
 import by.epam.bikerent.service.impl.RegisterUserServiceImpl;
-import by.epam.bikerent.service.util.ValidatorException;
 
 public class RegisterCommandImpl implements BaseCommand {
 

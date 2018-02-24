@@ -1,6 +1,6 @@
 package by.epam.bikerent.service.impl;
 
-import static by.epam.bikerent.service.util.RequestParameterValidator.validateUserName;
+import static by.epam.bikerent.service.util.RequestParameterValidator.validateUserLogin;
 import static by.epam.bikerent.service.util.RequestParameterValidator.validateUserPassword;
 import static by.epam.bikerent.service.util.Md5Hash.hash;
 
@@ -23,7 +23,7 @@ public class LoginServiceImpl implements LoginService{
 
 		User user = null;
 		try {
-			validateUserName(userName);
+			validateUserLogin(userName);
 			validateUserPassword(userPassword);
 			String hashPassword = hash(userPassword);
 			user = userDao.readUserAuthorization(userName, hashPassword);

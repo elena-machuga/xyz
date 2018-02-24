@@ -24,7 +24,7 @@ public class LoginCommandImpl implements BaseCommand {
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response) {
 
-		String userName = request.getParameter(REQUEST_USERNAME);
+		String userName = request.getParameter(REQUEST_LOGIN);
 		String userPassword = request.getParameter(REQUEST_PASSWORD);
 
 		User user = service.authorizeUser(userName, userPassword);
