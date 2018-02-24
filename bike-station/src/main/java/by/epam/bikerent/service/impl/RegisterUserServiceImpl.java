@@ -1,6 +1,7 @@
 package by.epam.bikerent.service.impl;
 
-import java.util.ArrayList;
+import static by.epam.bikerent.service.util.Md5Hash.hash;
+
 import java.util.List;
 
 import by.epam.bikerent.dao.UserDAO;
@@ -14,10 +15,11 @@ public class RegisterUserServiceImpl implements RegisterUserService {
 	@Override
 	public int registerUser(String name, String address, String phone, String login, String pass) {
 		
+		String hashPassword = hash(pass);
 		int result = 0;
 		List<User> listBeforeInsert = userDao.requestUserList();
 		int numOfUsersBefore = listBeforeInsert.size();
-		userDao.createUser(name, address, phone, login, pass);
+		userDao.createUser(name, address, phone, login, hashPassword);
 		List<User> listAfterInsert = userDao.requestUserList();
 		int numOfUsersAfter = listAfterInsert.size();
 		

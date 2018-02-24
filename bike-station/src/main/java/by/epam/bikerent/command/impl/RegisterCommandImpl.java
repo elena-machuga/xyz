@@ -23,11 +23,11 @@ public class RegisterCommandImpl implements BaseCommand {
 
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response) {
-		String userLogin = request.getParameter(REQUEST_REGISTER_LOGIN);
-		String userPassword = request.getParameter(REQUEST_REGISTER_PASSWORD);
-		String userName = request.getParameter(REQUEST_REGISTER_USERNAME);
-		String userAddress = request.getParameter(REQUEST_REGISTER_ADDRESS);
-		String userPhone = request.getParameter(REQUEST_REGISTER_PHONE);
+		String userLogin = request.getParameter(REQUEST_LOGIN);
+		String userPassword = request.getParameter(REQUEST_PASSWORD);
+		String userName = request.getParameter(REQUEST_USERNAME);
+		String userAddress = request.getParameter(REQUEST_ADDRESS);
+		String userPhone = request.getParameter(REQUEST_PHONE);
 
 		int result = service.registerUser(userName, userAddress, userPhone, userLogin, userPassword);
 

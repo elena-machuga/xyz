@@ -22,6 +22,7 @@ public class UserDAO {
 	private static final String USER_PASSWORD = "pass";
 	private static final String USER_ROLE = "role_id";
 	private static final String USER_ID = "id";
+	private static final String ROLE_USER = "2";
 
 	public User readUserAuthorization(String login, String password) {
 		ConnectionPool cp = ConnectionPool.getInstance();
@@ -69,7 +70,7 @@ public class UserDAO {
 			ps.setString(3, phone);
 			ps.setString(4, login);
 			ps.setString(5, pass);
-			ps.setString(6, "2");
+			ps.setString(6, ROLE_USER);
 
 			int rs = ps.executeUpdate();
 
@@ -93,7 +94,7 @@ public class UserDAO {
 			ps.setString(3, user.getPhone());
 			ps.setString(4, user.getLogin());
 			ps.setString(5, user.getPassword());
-			ps.setString(6, "2");
+			ps.setString(6, ROLE_USER);
 			ps.setInt(7, user.getUserID());
 
 			ResultSet rs = ps.executeQuery();

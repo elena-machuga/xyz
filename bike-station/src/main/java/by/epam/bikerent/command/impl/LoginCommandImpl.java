@@ -1,7 +1,6 @@
 package by.epam.bikerent.command.impl;
 
 import static by.epam.bikerent.service.util.RequestParameter.*;
-import static by.epam.bikerent.service.util.RequestParameterValidator.*;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -15,8 +14,6 @@ import by.epam.bikerent.domain.Role;
 import by.epam.bikerent.domain.User;
 import by.epam.bikerent.service.LoginService;
 import by.epam.bikerent.service.impl.LoginServiceImpl;
-import by.epam.bikerent.service.util.ValidatorException;
-import by.epam.bikerent.service.util.ValidatorException.*;
 
 public class LoginCommandImpl implements BaseCommand {
 	
@@ -27,8 +24,8 @@ public class LoginCommandImpl implements BaseCommand {
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response) {
 
-		String userName = request.getParameter(REQUEST_LOGIN_USERNAME);
-		String userPassword = request.getParameter(REQUEST_LOGIN_PASSWORD);
+		String userName = request.getParameter(REQUEST_USERNAME);
+		String userPassword = request.getParameter(REQUEST_PASSWORD);
 
 		User user = service.authorizeUser(userName, userPassword);
 		HttpSession session = request.getSession(true);

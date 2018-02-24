@@ -2,6 +2,7 @@ package by.epam.bikerent.service.impl;
 
 import static by.epam.bikerent.service.util.RequestParameterValidator.validateUserName;
 import static by.epam.bikerent.service.util.RequestParameterValidator.validateUserPassword;
+import static by.epam.bikerent.service.util.Md5Hash.hash;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -24,7 +25,8 @@ public class LoginServiceImpl implements LoginService{
 		try {
 			validateUserName(userName);
 			validateUserPassword(userPassword);
-			user = userDao.readUserAuthorization(userName, userPassword);
+			String hashPassword = hash(userPassword);
+			user = userDao.readUserAuthorization(userName, hashPassword);
 		} catch (ValidatorException e) {
 			LOG.error("Validation error ", e);
 		}

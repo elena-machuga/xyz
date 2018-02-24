@@ -69,28 +69,28 @@
 						<input type="hidden" name="action" value="register" />
 						<div class="form-group">
 							<label for="email">${emailnote}</label> <input type="email"
-								class="form-control" name="new_user_login">
+								class="form-control" name="user_login">
 						</div>
 						<div class="form-group">
 							<label for="pwd">${password}</label> <input type="password"
-								class="form-control" name="new_user_password" id="pass">
+								class="form-control" name="user_password" id="pass">
 						</div>
 						<div class="form-group">
 							<label for="pwd">${repassword}</label> <input type="password"
-								class="form-control" name="new_user_repassword" id="repPass">
+								class="form-control" name="user_repassword" id="repPass">
 						</div>
 						<div id="errorBlock"></div>
 						<div class="form-group">
 							<label for="name">${name}</label> <input type="text"
-								class="form-control" name="new_user_name">
+								class="form-control" name="user_name">
 						</div>
 						<div class="form-group">
 							<label for="name">${address}</label> <input type="text"
-								class="form-control" name="new_user_address">
+								class="form-control" name="user_address">
 						</div>
 						<div class="form-group">
 							<label for="name">${phone}</label> <input type="tel"
-								class="form-control" name="new_user_phone">
+								class="form-control" name="user_phone">
 						</div>
 						<button type="submit" class="btn btn-default">${register}</button>
 					</form>
