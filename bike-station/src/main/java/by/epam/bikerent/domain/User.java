@@ -7,18 +7,20 @@ public class User {
 	private String login;
 	private String password;
 	private Role role;
+	private BlockStatus blockStatus;
 	private int userID;
 
 	public User() {
 	}
 
-	public User(String name, String addres, String phone, String login, String password, Role role, int userID) {
+	public User(String name, String addres, String phone, String login, String password, Role role, BlockStatus blockStatus, int userID) {
 		this.name = name;
 		this.addres = addres;
 		this.phone = phone;
 		this.login = login;
 		this.password = password;
 		this.role = role;
+		this.blockStatus = blockStatus;
 		this.userID = userID;
 	}
 
@@ -79,6 +81,18 @@ public class User {
 			this.role = Role.GUEST;
 		}
 
+	}
+
+	public BlockStatus getBlockStatus() {
+		return blockStatus;
+	}
+
+	public void setBlockStatus(String blockStatus) {
+		if ("1".equals(blockStatus)) {
+			this.blockStatus = BlockStatus.BLOCKED;
+		} else if("0".equals(blockStatus)) {
+			this.blockStatus = BlockStatus.NOT_BLOCKED;
+		}
 	}
 
 	public int getUserID() {

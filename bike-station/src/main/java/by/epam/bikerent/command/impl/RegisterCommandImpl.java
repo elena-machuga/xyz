@@ -18,11 +18,12 @@ public class RegisterCommandImpl implements BaseCommand {
 	public String execute(HttpServletRequest request, HttpServletResponse response) {
 		String userLogin = request.getParameter(REQUEST_LOGIN);
 		String userPassword = request.getParameter(REQUEST_PASSWORD);
+		String userRePassword = request.getParameter(REQUEST_REPASSWORD);
 		String userName = request.getParameter(REQUEST_USERNAME);
 		String userAddress = request.getParameter(REQUEST_ADDRESS);
 		String userPhone = request.getParameter(REQUEST_PHONE);
 
-		int result = service.registerUser(userName, userAddress, userPhone, userLogin, userPassword);
+		int result = service.registerUser(userName, userAddress, userPhone, userLogin, userPassword, userRePassword);
 
 		if (result == 1) {			
 			return "bikes?action=go_to_registered_page";			

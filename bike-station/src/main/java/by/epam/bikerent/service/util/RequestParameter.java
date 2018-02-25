@@ -7,6 +7,7 @@ public final class RequestParameter {
 
 	public static final String REQUEST_LOGIN = "user_login";
 	public static final String REQUEST_PASSWORD = "user_password";
+	public static final String REQUEST_REPASSWORD = "user_repassword";
 	public static final String REQUEST_PHONE = "user_phone";
 	public static final String REQUEST_ADDRESS = "user_address";
 	public static final String REQUEST_USERNAME = "user_name";
