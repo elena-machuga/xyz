@@ -1,4 +1,4 @@
-package by.epam.bikerent.dao;
+package by.epam.bikerent.dao.exception;
 
 public class UserDaoException extends Exception {
 

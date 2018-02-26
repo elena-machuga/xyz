@@ -13,7 +13,8 @@ public class User {
 	public User() {
 	}
 
-	public User(String name, String addres, String phone, String login, String password, Role role, BlockStatus blockStatus, int userID) {
+	public User(String name, String addres, String phone, String login, String password, Role role,
+			BlockStatus blockStatus) {
 		this.name = name;
 		this.addres = addres;
 		this.phone = phone;
@@ -21,7 +22,6 @@ public class User {
 		this.password = password;
 		this.role = role;
 		this.blockStatus = blockStatus;
-		this.userID = userID;
 	}
 
 	public String getName() {
@@ -75,7 +75,7 @@ public class User {
 	public void setRole(String role) {
 		if ("1".equals(role)) {
 			this.role = Role.ADMIN;
-		} else if("2".equals(role)) {
+		} else if ("2".equals(role)) {
 			this.role = Role.USER;
 		} else {
 			this.role = Role.GUEST;
@@ -90,7 +90,7 @@ public class User {
 	public void setBlockStatus(String blockStatus) {
 		if ("1".equals(blockStatus)) {
 			this.blockStatus = BlockStatus.BLOCKED;
-		} else if("0".equals(blockStatus)) {
+		} else if ("0".equals(blockStatus)) {
 			this.blockStatus = BlockStatus.NOT_BLOCKED;
 		}
 	}
@@ -106,7 +106,7 @@ public class User {
 	@Override
 	public String toString() {
 		return "User [name=" + name + ", addres=" + addres + ", phone=" + phone + ", login=" + login + ", password="
-				+ password + ", role=" + role + ", userID=" + userID + "]";
+				+ password + ", role=" + role + ", blockStatus=" + blockStatus + ", userID=" + userID + "]";
 	}
 
 	@Override
@@ -114,6 +114,7 @@ public class User {
 		final int prime = 31;
 		int result = 1;
 		result = prime * result + ((addres == null) ? 0 : addres.hashCode());
+		result = prime * result + ((blockStatus == null) ? 0 : blockStatus.hashCode());
 		result = prime * result + ((login == null) ? 0 : login.hashCode());
 		result = prime * result + ((name == null) ? 0 : name.hashCode());
 		result = prime * result + ((password == null) ? 0 : password.hashCode());
@@ -140,6 +141,9 @@ public class User {
 				return false;
 			}
 		} else if (!addres.equals(other.addres)) {
+			return false;
+		}
+		if (blockStatus != other.blockStatus) {
 			return false;
 		}
 		if (login == null) {

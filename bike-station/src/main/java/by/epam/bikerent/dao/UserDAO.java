@@ -7,6 +7,8 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+import by.epam.bikerent.dao.connectionpool.ConnectionPool;
+import by.epam.bikerent.dao.exception.UserDaoException;
 import by.epam.bikerent.domain.User;
 
 public class UserDAO {
@@ -14,6 +16,7 @@ public class UserDAO {
 	private static final String SQL_SELECT_USER_AUTH = "SELECT login, pass, name, role_id, block_status from user where login = ? and pass = ?";
 	private static final String SQL_SELECT_ALL_USER = "SELECT name, address, phone, login, pass, role_id, block_status from user";
 	private static final String SQL_REGISTER_USER = "INSERT INTO user (name, address, phone, login, pass, role_id, block_status) VALUES (?, ?, ?, ?, ?, ?, ?)";
+	//TODO
 	private static final String SQL_UPDATE_USER = "UPDATE user SET name=?, address=?, phone=?, login=?, pass=?, role_id=?, block_status=? WHERE id=?";
 	private static final String USER_NAME = "name";
 	private static final String USER_ADDRESS = "address";
@@ -104,7 +107,7 @@ public class UserDAO {
 			
 			//TODO update info, update pass, block
 
-			ps.executeQuery();
+			ps.executeUpdate();
 
 		} catch (SQLException e) {
 			throw new UserDaoException();

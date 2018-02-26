@@ -10,7 +10,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import by.epam.bikerent.dao.UserDAO;
-import by.epam.bikerent.dao.UserDaoException;
+import by.epam.bikerent.dao.exception.UserDaoException;
 import by.epam.bikerent.domain.User;
 import by.epam.bikerent.service.RegisterUserService;
 import by.epam.bikerent.service.util.ValidatorException;

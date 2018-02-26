@@ -1,7 +1,8 @@
-package by.epam.bikerent.dao;
+package by.epam.bikerent.dao.connectionpool;
 
 import java.sql.Connection;
 import java.sql.SQLException;
+import java.util.concurrent.BlockingQueue;
 
 import javax.naming.Context;
 import javax.naming.InitialContext;
@@ -20,6 +21,8 @@ public class ConnectionPool {
 	private static ConnectionPool instance = null;
 	private final static String CONTEXT_LOOKUP = "java:comp/env";
 	private final static String DATASOURCE_LOOKUP = "jdbc/bike-station";
+	private BlockingQueue<Connection> connectionQueue;
+	private BlockingQueue<Connection> givenAwayConQueue;
 
 	private ConnectionPool() {
 	}
@@ -65,7 +68,7 @@ public class ConnectionPool {
 		return connection;
 	}
 
-	protected void closeConnection(Connection connection) {
+	public void closeConnection(Connection connection) {
 		if (connection != null) {
 			try {
 				connection.close();
